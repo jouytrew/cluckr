@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+    <meta charset="utf-8">
+    <title>Cluckr</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="/">
+        <img src="https://d1nhio0ox7pgb.cloudfront.net/_img/g_collection_png/standard/64x64/bird.png" width="30" height="30" alt="">
+      </a>
+
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Cluck<span class="sr-only">(current)</span></a>
+        </li>
+
+        <% if (username) { %>
+          <li><a class="nav-link"><%=username%></a></li>
+
+          <li class="nav-item">
+            <form action="/sign_out" method="post" class="form-inline">
+              <button type=submit class="btn btn-warning">Sign Out</button>
+            </form>
+          </li>
+        <% } else { %>
+          <li class="nav-item">
+            <button type=submit class="btn info"><a href="/sign_in">Sign In</a></button>
+          </li>
+        <% } %>
+      </ul>
+    </nav>
