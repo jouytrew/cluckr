@@ -23,7 +23,7 @@ const COOKIE_MAX_AGE = 1000 * 3600 * 24 * 7;
 router.post("/sign_in", (request, response) => {
   const username = request.body.username;
   response.cookie("username", username, {maxAge: COOKIE_MAX_AGE});
-  response.redirect("/sign_in");
+  response.redirect("/");
 });
 
 router.post("/sign_out", (request, response) => {

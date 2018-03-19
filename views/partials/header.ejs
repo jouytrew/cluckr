@@ -17,21 +17,23 @@
       </a>
 
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="#">Cluck<span class="sr-only">(current)</span></a>
+        <li class="nav-item p-1">
+          <button type=submit class="btn btn-secondary" onclick="window.location.href='/'">Cluck</button>
         </li>
 
         <% if (username) { %>
-          <li><a class="nav-link"><%=username%></a></li>
+          <li class="nav-item active">
+            <a class="nav-link"><%=username%></a>
+          </li>
 
-          <li class="nav-item">
+          <li class="nav-item p-1">
             <form action="/sign_out" method="post" class="form-inline">
               <button type=submit class="btn btn-warning">Sign Out</button>
             </form>
           </li>
         <% } else { %>
-          <li class="nav-item">
-            <button type=submit class="btn info"><a href="/sign_in">Sign In</a></button>
+          <li class="nav-item p-1">
+            <button type=submit class="btn info" onclick="window.location.href='/sign_in'">Sign In</button>
           </li>
         <% } %>
       </ul>
