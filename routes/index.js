@@ -18,7 +18,16 @@ let formatDate = (date) => {
   if (hoursPassed < 24) {
     return `${hoursPassed} hour${hoursPassed > 1 ? "s" : ""} ago`
   }
-  return `Unsupported time`
+  const daysPassed = Math.floor(hoursPassed / 24)
+  if (daysPassed < 30) {
+    return `${daysPassed} day${daysPassed > 1 ? "s" : ""} ago`
+  }
+  const monthsPassed = Math.floor(days / 30.4)
+  if (months < 12) {
+    return `${monthsPassed} month${monthsPassed > 1 ? "s" : ""} ago`
+  }
+  const yearsPassed = Math.floor(daysPassed / 365.25)
+  return `${yearsPassed} year${yearsPassed > 1 ? "s" : ""} ago`
 }
 
 app.set("view engine", "ejs");
