@@ -1,3 +1,35 @@
 <%- include("./partials/header") %>
 
+  <div align="center">
+    <ul class="list-group p-2">
+      <% for (let post of posts) { %>
+          <li class="p-2">
+            <div class="card" style="width: 24rem;">
+              <div class="card-body">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-">
+                      <img src=https://www.meme-arsenal.com/memes/e769d4b3d2f5b58aed5667d911ab8711.jpg width="40" height="40" alt="image">
+                    </div>
+                    <div class="col" align="left">
+                      <h6 class="card-subtitle mb-2 text-muted">
+                        <strong><%= post.username %></strong> ⋅ <%= formatDate(post.created_at) %>
+                      </h6>
+                      <p class="card-text"><%= post.content %></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="container">
+                </div>
+
+              </div>
+              <% if (post.image_url) { %>
+                <img class="card-img-bottom" src=<%= post.image_url %> alt="Card image cap">
+              <% } %>
+            </div>
+          </li>
+      <% } %>
+    </ul>
+  </div>
+
 <%- include("./partials/footer") %>

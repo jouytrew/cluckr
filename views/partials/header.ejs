@@ -11,26 +11,28 @@
     <title>Cluckr</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-inverse navbar-light bg-light">
       <a class="navbar-brand" href="/">
         <img src="https://d1nhio0ox7pgb.cloudfront.net/_img/g_collection_png/standard/64x64/bird.png" width="30" height="30" alt="">
       </a>
 
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item p-1">
-          <button type=submit class="btn btn-secondary" onclick="window.location.href='/'">Cluck</button>
-        </li>
-
+      <ul class="nav navbar-nav navbar-right">
         <% if (username) { %>
-          <li class="nav-item active">
-            <a class="nav-link"><%=username%></a>
-          </li>
+          <div class="row">
+            <li class="nav-item active">
+              <a class="nav-link mr-3">Hello, <strong><%=username%></strong></a>
+            </li>
 
-          <li class="nav-item p-1">
-            <form action="/sign_out" method="post" class="form-inline">
-              <button type=submit class="btn btn-warning">Sign Out</button>
-            </form>
-          </li>
+            <li class="nav-item p-1">
+              <button type=submit class="btn btn-secondary" onclick="window.location.href='/posting'">Cluck</button>
+            </li>
+
+            <li class="nav-item p-1">
+              <form action="/sign_out" method="post" class="form-inline">
+                <button type=submit class="btn btn-warning">Sign Out</button>
+              </form>
+            </li>
+          </div>
         <% } else { %>
           <li class="nav-item p-1">
             <button type=submit class="btn info" onclick="window.location.href='/sign_in'">Sign In</button>
